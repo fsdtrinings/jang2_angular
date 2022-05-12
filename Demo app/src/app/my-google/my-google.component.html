@@ -1,0 +1,31 @@
+
+<div class="box">
+    <div>
+         <h3> Enter Search Keyword</h3>
+    </div>
+    <div>
+        <input type="text" />
+    </div>
+    <div>
+        <input type="submit" value="Search"/>
+    </div>
+
+</div>
+<hr/>
+Temperature{{doThings()}}
+<br/>
+{{15+154}}
+<hr/>
+Account 1 Info 
+    <div class="userInfo">
+        {{accounts[1].accountName}} , {{accounts[1].balance}}
+    </div>
+<hr/> Property Binding Example <hr/>
+
+Amount to transfer
+<input type="text" [readonly]="status" value="" id="abc" #tfunds/> <!--   #xyz is called as ref variable-->
+<button (click)="doTransferFund(tfunds.value)" class="myAction">transfer funds </button>
+
+<p class="popUpMsg">
+    {{transferStatus?"Fund Transfered":" Low Balance, Cannot Transfer the funds"}}
+</p>

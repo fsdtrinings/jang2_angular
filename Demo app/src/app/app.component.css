@@ -1,0 +1,15 @@
+.top{
+    margin-left: 75%;
+    margin-bottom: 4%;
+}
+a{
+    margin-right: 5%;
+    color: white;
+            background-color: #38CC77;
+            height: 40px;
+            width: 90px;
+            padding: 2px;
+            border: 2px solid black;
+            text-decoration: none;
+    
+}
