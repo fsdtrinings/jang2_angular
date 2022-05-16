@@ -1,0 +1,59 @@
+
+<h2> My Stock Screener</h2>
+<hr/>
+<h4> Date : {{todayDate|date:'short'}} <hr/></h4>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th> Stock Name </th>
+            <th> Compnay Info </th>
+            <th> Open Price </th>
+            <th> Current Price </th>
+            <th> VWMP </th>
+            <th> Change(%) </th>
+            <th> Lot Size </th>
+            <th> Trade Value </th>
+            <th> Trade Value In Jap Yen</th>
+            <th> Volume</th>
+            <th> Recommendation</th>
+            
+        </tr>
+    </thead>
+    
+    <tr *ngFor="let stock of stockArr">
+        <td> {{stock.stockName}}</td>
+        <td> {{stock.companyInfo}}</td>
+        <td> {{stock.openPrice | currency:'INR'}}</td>
+        <td> 
+            <div *ngIf="stock.last < stock.openPrice == true">
+                <p  class="RedStyle"> {{stock.last | currency : 'INR'}} </p>
+            </div>
+            <div *ngIf="stock.last < stock.openPrice == false">
+                <p  class="GreenStyle">{{stock.last | currency : 'INR'}}  </p>
+            </div>
+            
+
+        </td>
+        <td> {{stock.vwmp | currency : 'INR'}}</td>
+        <td> {{ (stock.last-stock.openPrice)/stock.openPrice | percent:'2.1-1' }}</td>
+        <td> <input type="number" [(ngModel)]="stock.lotSize"></td>
+        <td> {{stock.lotSize*stock.last | currency : 'INR'}}</td>
+        <td> {{stock.lotSize*stock.last*1.66 | currency : 'JPY'}}</td>
+        <td> {{stock.volume|StockVolume}}</td>
+        <td> 
+            <p *ngIf="stock.last<stock.vwmp == true">
+                Buy
+            </p>
+            <p *ngIf="stock.last<stock.vwmp == false">
+                Sell
+            </p>
+        </td>
+        
+    </tr>
+
+</table>
+
+
+
+
