@@ -1,0 +1,37 @@
+<div style="width: 100%;background-color: bisque;">
+  <table style="width: 100%">
+    <tr style="width: 100%">
+      <td style="width:75%">
+        <h1> My Web Store</h1>
+      </td>
+      <td style="width:25%">
+          <div>
+            Welcome Amit
+            <br/>
+              <table>
+                <tr>
+                  <td> <a routerLink="cart">Cart</a>  </td>
+                  <td> 
+                    <div class="cartCount"> 
+                     {{cartCount}}
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td> <a href="#">{{sessionAction}}</a> </td>
+                </tr>
+              </table>
+
+              
+            
+
+          </div>
+          
+      </td>
+    </tr>
+  </table>
+</div>
+
+<app-all-links></app-all-links>
+<hr/>
+<app-main-area></app-main-area>

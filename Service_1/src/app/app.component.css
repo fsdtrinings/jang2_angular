@@ -1,0 +1,9 @@
+.cartCount{
+    width: 2px;
+    height: 2px;
+    border: 1px solid black;
+    margin: 2px;
+    background-color: red;
+    border-radius: 50%;
+    padding: 3%;
+}

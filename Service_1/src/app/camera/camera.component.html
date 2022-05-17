@@ -1,0 +1,11 @@
+<table>
+    
+    <tr *ngFor="let camera of allCameras">
+        <td> 
+            <img src="/assets/{{camera.productName}}.PNG " width="20px" height="20px" alt="cannot load"/>
+            {{camera.productName}} 
+        </td>
+        <td> {{camera.cost}} </td>
+        <td> <a href="#">add to cart</a></td>    
+    </tr>
+</table>
