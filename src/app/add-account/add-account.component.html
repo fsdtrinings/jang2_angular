@@ -4,21 +4,29 @@
             <tr>
                 <td> Enter Username </td>
                 <td> 
-                    <input type="text"  [(ngModel)]="accountModel.username" id="username" name="username"/> 
+                    <input #username="ngModel"   type="text"  [(ngModel)]="accountModel.username" id="username" name="username" required pattern="[a-zA-Z][a-zA-Z]+"/> 
                 </td>
-                <td> </td>
+                <td> 
+                    <div *ngIf="username.untouched == false && username.touched == true && username.invalid == true">
+                        <p class="errorMsg"> username cannot be left blank or not in proper format </p>
+                    </div>
+                </td>
             </tr>
             <tr>
                 <td> Password </td>
-                <td> <input type="Password" [(ngModel)]="accountModel.password" id="password" name="password"/> </td>
-                <td> </td>
+                <td> <input #password="ngModel" required minlength="5" type="Password" [(ngModel)]="accountModel.password" id="password" name="password"/> </td>
+                <td> 
+                    <div *ngIf="password.untouched == false && password.touched == true && password.invalid == true">
+                        <p class="errorMsg"> Password cannot be left blank or min 5 characters </p>
+                    </div>
+                </td>
             </tr>
            
             <tr>
                 <td> Role </td>
                 <td> 
-                    <input type="radio" value="admin" name="role" [(ngModel)]="accountModel.role" id="role" >admin
-                    <input type="radio" value="client" name="role" [(ngModel)]="accountModel.role" id="role">client
+                    <input type="radio" value="admin" name="role" [(ngModel)]="accountModel.role" id="role1" >admin
+                    <input type="radio" value="client" name="role" [(ngModel)]="accountModel.role" id="role2">client
                 </td>
                 <td> </td>
             </tr>
@@ -64,7 +72,7 @@
                 <td> </td>
             </tr>
             <tr>
-                <td> <button type="submit">Register User</button> </td>
+                <td> <button  [disabled]="accForm.form.invalid" type="submit">Register User</button> </td>
                 <td> <input type="reset" /> </td>
                 <td> </td>
             </tr>
