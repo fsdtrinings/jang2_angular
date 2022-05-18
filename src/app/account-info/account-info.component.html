@@ -1,0 +1,12 @@
+<div style="width: 80%;margin-left: 5%;">
+    <table style="width: 100%;padding: auto;">
+        <tr *ngFor="let account of allAccounts">
+            <td> {{account.username}}</td>
+            <td> {{account.password}}</td>
+            <td> {{account.balance}}</td>
+            <td> {{account.userdetails.firstName}}</td>
+            <td> {{account.userdetails.panNumber}}</td>
+            
+        </tr>
+    </table>
+</div>

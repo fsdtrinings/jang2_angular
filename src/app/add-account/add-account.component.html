@@ -1,0 +1,76 @@
+<div class="mainDiv">
+    <form (ngSubmit)="formSubmittion()" #accForm="ngForm">
+        <table style="margin-top: 10%;margin-bottom: 2%">
+            <tr>
+                <td> Enter Username </td>
+                <td> 
+                    <input type="text"  [(ngModel)]="accountModel.username" id="username" name="username"/> 
+                </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Password </td>
+                <td> <input type="Password" [(ngModel)]="accountModel.password" id="password" name="password"/> </td>
+                <td> </td>
+            </tr>
+           
+            <tr>
+                <td> Role </td>
+                <td> 
+                    <input type="radio" value="admin" name="role" [(ngModel)]="accountModel.role" id="role" >admin
+                    <input type="radio" value="client" name="role" [(ngModel)]="accountModel.role" id="role">client
+                </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Initial Balance </td>
+                <td> <input type="number" [(ngModel)]="accountModel.balance" id="balance" name="balance"/> </td>
+                <td> </td>
+            </tr>
+           
+            
+        </table>
+        <hr/>
+        <table>
+            <tr>
+                <td> First Name </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.firstName" id="firstName" name="firstName"/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Last Name </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.lastname" id="lastname" name="lastname"/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Address </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.houseAddress" id="houseAddress" name="houseAddress"/> </td>
+                <td> </td>
+            </tr>
+
+            <tr>
+                <td> City </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.city" id="city" name="city"/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Pan number </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.panNumber" id="panNumber" name="panNumber"/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> Mobile Phone  </td>
+                <td> <input type="text" [(ngModel)]="accountModel.userdetails.mobileNumber" id="mobileNumber" name="mobileNumber"/> </td>
+                <td> </td>
+            </tr>
+            <tr>
+                <td> <button type="submit">Register User</button> </td>
+                <td> <input type="reset" /> </td>
+                <td> </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+
+
