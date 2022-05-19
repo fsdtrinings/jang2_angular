@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Account } from '../account';
 import { AccountServiceService } from '../account-service.service';
-import { Userdetails } from '../userdetails';
+import { UserDetails } from '../userdetails';
 
 @Component({
   selector: 'app-add-account',
@@ -10,9 +10,10 @@ import { Userdetails } from '../userdetails';
 })
 export class AddAccountComponent implements OnInit {
 
-  userDeatils:Userdetails= new Userdetails('','','','','',0);
-  accountModel:Account = new Account('','',0,'',this.userDeatils);
+  userDeatils:UserDetails= new UserDetails('','','','','',0);
+  accountModel:Account = new Account('','',0,'');
   accountService:AccountServiceService;
+ 
 
   constructor(accountService:AccountServiceService) {
     this.accountService = accountService;
@@ -25,7 +26,13 @@ export class AddAccountComponent implements OnInit {
   {
     console.log("form submit button clicked ");
     console.log(this.accountModel);
-    this.accountService.addAccount(this.accountModel);
+    this.accountService.addAccount(this.accountModel).subscribe(
+      data=>{
+            alert(' Data Saved');
+      },error=>{
+        console.log('Contact to customer care '+error);
+      }
+    );
   }
 
 }//end class

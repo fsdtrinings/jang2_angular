@@ -1,17 +1,17 @@
-<div style="width:100%; height: 3%;background-color: darkkhaki;">
+<div class="top">
 
     <table style="width: 100%;">
       <tr>
-        <td style="width: 80%;"><h1> My Bank App</h1></td>
-        <td style="width: 20%;"><h4>Welcome Mike</h4></td>
+        <td style="width: 80%;"><h1><a routerLink="home"> My Bank App</a> </h1></td>
+        <td style="width: 20%;"><h4 *ngIf="status == true">Welcome {{username}}</h4></td>
       </tr>
     </table>
-  
-</div>
+ </div>
 <table style="width: 100%;">
   <tr>
-    <td style="width: 12%;"> <app-link-panel></app-link-panel>  </td>
-    <td style="width: 88%;"> <app-main-panel></app-main-panel>   </td>
+    <td style="width: 12%;"> <app-link-panel [adminStatus]="isAdmin"></app-link-panel>  </td>
+    <td style="width: 88%;" *ngIf="status == false"> <app-home (loginAcknowlegment)="getAck($event)"></app-home>   </td>
+    <td style="width: 88%;" *ngIf="status == true"> <app-main-panel></app-main-panel>   </td>
     
   </tr>
 </table>

@@ -1,4 +1,4 @@
-export class Userdetails {
+export class UserDetails {
     firstName:string;
     lastname:string;
     houseAddress:string;

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-link-panel',
@@ -9,6 +9,7 @@ export class LinkPanelComponent implements OnInit {
 
   constructor() { }
 
+ @Input() adminStatus:boolean=false;
   ngOnInit(): void {
   }
 

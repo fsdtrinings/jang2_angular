@@ -35,8 +35,13 @@
                 <td> <input type="number" [(ngModel)]="accountModel.balance" id="balance" name="balance"/> </td>
                 <td> </td>
             </tr>
-           
-            
+            <tr>
+                <td> <button  [disabled]="accForm.form.invalid" type="submit">Register User</button> </td>
+                <td> <input type="reset" /> </td>
+                <td> </td>
+            </tr>
+        </table> 
+           <!--
         </table>
         <hr/>
         <table>
@@ -71,12 +76,9 @@
                 <td> <input type="text" [(ngModel)]="accountModel.userdetails.mobileNumber" id="mobileNumber" name="mobileNumber"/> </td>
                 <td> </td>
             </tr>
-            <tr>
-                <td> <button  [disabled]="accForm.form.invalid" type="submit">Register User</button> </td>
-                <td> <input type="reset" /> </td>
-                <td> </td>
-            </tr>
-        </table>
+            
+       
+        --> 
     </form>
 </div>
 

@@ -1,0 +1,17 @@
+.loginform{
+    
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 3%;
+}
+
+.logindiv{
+    border: 2px solid rgb(243, 173, 23);
+}
+
+.errorMsg
+{
+    color: red;
+    font-style: italic;
+    font-size: small;
+}

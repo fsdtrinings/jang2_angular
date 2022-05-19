@@ -1,0 +1,53 @@
+<div style="width: 100%;">
+    <table style="width: 98%;margin-left: 2%;" >
+        <tr>
+            <td style="width: 70%">
+                <img src="/assets/bankimg/fd.PNG"/>
+                <img src="/assets/bankimg/note.PNG"/>
+            </td>
+
+
+            <td style="text-align: left;">
+                <div class="logindiv">
+                    <form class="loginform" (ngSubmit)="doLogin()" #loginForm="ngForm">
+                        <table>
+                            <tr>
+                                <td style="width: 45%"> Enter Username </td>
+                                <td> 
+                                    <input required type="text" #username="ngModel" [(ngModel)]="loginModel.username" id="username" name="username"/> 
+                                    <div *ngIf="username.untouched == false && username.touched == true && username.invalid == true">
+                                        <p class="errorMsg"> username cannot be left blank </p>
+                                    </div> 
+                                </td>
+                                
+                            </tr>
+                            <tr >
+                                <td> Enter Password </td>
+                                <td> 
+                                    <input required type="text" #password="ngModel" [(ngModel)]="loginModel.password" id="password" name="password"/> 
+                                
+                                    <div *ngIf="password.untouched == false && password.touched == true && password.invalid == true">
+                                        <p class="errorMsg"> Password cannot be left blank </p>
+                                    </div>    
+                                </td>
+                            </tr>
+                            
+                            
+                        </table>
+                        <table>
+                            <tr>
+                                <td> <button  [disabled]="loginForm.form.invalid" type="submit">Login</button> </td>
+
+                            </tr>
+                            <tr>
+                                <td style="width: 130px;"> <a href="#">forgot details</a> </td>
+                                <td>  <a routerLink="addAccount">Registration</a> </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </td>
+
+        </tr>
+    </table>
+</div>

@@ -1,7 +1,9 @@
 <div style="margin-top: 10%;margin-left: 4%;border-right: 2px solid rgb(211, 124, 3);">
-    <div class="mylink"> <a routerLink="addAccount">Add Account</a> </div>
-    <div class="mylink"> <a routerLink="accinfo">Accounts Info</a> </div>
-    <div class="mylink"> <a routerLink="#">Transfer Funds</a> </div>
+    
+    <div class="mylink" *ngIf="adminStatus == true"> <a routerLink="addAccount">Add Account</a> </div>
+   
+    <div class="mylink" *ngIf="adminStatus == true"> <a routerLink="accinfo">Accounts Info</a> </div>
+    <div class="mylink"> <a routerLink="transferfund">Transfer Funds</a> </div>
     <div class="mylink"> <a routerLink="#">check Balance</a> </div>
-    <div class="mylink"> <a routerLink="#">Deposit</a> </div>
+    <div class="mylink"> <a routerLink="deposit">Deposit</a> </div>
 </div>
